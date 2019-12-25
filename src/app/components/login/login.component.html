@@ -1,0 +1,44 @@
+<div class="form-signin">
+  <div>
+    <img class="mb-4" src="../../../assets/images/modal-login-icon.png" alt="Login">
+    <h4 class="section-title-4 text-center font-weight-800 text-uppercase mb-4 pb-1">
+      User Login
+      <div class="title-divider-round"></div>
+    </h4>
+  </div>
+
+  <form class="mb-4" (submit)="onSubmit()">
+
+    <div class="input-group input-group-round mb-3">
+      <div class="input-group-inner">
+        <div class="input-group-prepend">
+          <span class="input-group-text input-group-icon" id="modalLoginUsername"><i class="far fa-user"></i></span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="modalRegisterUsername" placeholder="Username" required autofocus>
+        <div class="input-focus-bg"></div>
+      </div>
+    </div>
+
+    <div class="input-group input-group-round mb-3">
+      <div class="input-group-inner">
+        <div class="input-group-prepend">
+          <span class="input-group-text input-group-icon" id="modalLoginPassword"><i class="far fa-eye-slash"></i></span>
+        </div>
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="modalRegisterPassword" placeholder="Password" required>
+        <div class="input-focus-bg"></div>
+      </div>
+    </div>
+
+    <div class="custom-control custom-checkbox mb-4">
+      <input type="checkbox" class="custom-control-input" id="customCheck1">
+      <label class="custom-control-label" for="customCheck1">Remember me</label>
+    </div>
+
+    <button type="submit" class="btn btn-round btn-primary btn-block">Sign in</button>
+
+    <label>
+      Forgot your password <a href="#">Click Here</a>
+    </label>
+
+  </form>
+</div>

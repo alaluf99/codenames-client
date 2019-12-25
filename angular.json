@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              {
+                "input": "src/assets/css/zkin-ui-kit.min.css"
+              }
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/zkin-ui-kit.js",
+              "./node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

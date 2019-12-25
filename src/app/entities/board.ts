@@ -1,4 +1,6 @@
+import {Card} from './card';
+
 export class Board {
   id: string;
-  cards: Cards[];
+  cards: Card[];
 }

@@ -31,6 +31,9 @@
               "src/styles.less",
               {
                 "input": "src/assets/css/zkin-ui-kit.min.css"
+              },
+              {
+                "input": "src/assets/fontawesome/css/all.min.css"
               }
             ],
             "scripts": [

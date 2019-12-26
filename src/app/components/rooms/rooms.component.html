@@ -20,8 +20,8 @@
 
     <div class="add-room-group">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="enter room name">
+        <input  [(ngModel)]="roomName" matInput placeholder="enter room name">
       </mat-form-field>
-      <button mat-button class="btn btn-primary add-room" (click)="addRoom()">add room</button>
+      <button [disabled]="!roomName" mat-raised-button color="primary" class="btn btn-primary add-room" (click)="addRoom()">add room</button>
     </div>
 </div>

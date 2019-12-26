@@ -57,4 +57,8 @@ export class RoomsComponent implements OnInit {
   enterRoom() {
 
   }
+
+  addRoom() {
+    console.log('hi');
+  }
 }

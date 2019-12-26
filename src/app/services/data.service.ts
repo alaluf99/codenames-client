@@ -16,7 +16,7 @@ export class DataService {
   }
 
   addUserToRoom(roomId: string) {
-    return this.httpClient.post(this.SERVER_URL + '/rooms/users', {roomId, 'userId': this.authenticationService.currentUserId})
+    return this.httpClient.post(this.SERVER_URL + '/rooms/user', {roomId, 'userId': this.authenticationService.currentUserId})
   }
 
   getRooms() {

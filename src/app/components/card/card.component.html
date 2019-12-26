@@ -2,17 +2,16 @@
   <div class="word" [ngClass]="{'exposed': card.isExposed}">
     {{card.word}}
   </div>
-<!--  <div class="red faces">-->
-  <div class="red faces" *ngIf="card.type == typesEnum.RED_CARD && card.isExposed">
-    <img src="/assets/images/red-agent.png" alt="">
+  <div class="red faces" *ngIf="card.type == cardTypeEnum.RED_CARD && (card.isExposed || playerType === playerTypeEnum.SUPER_SPY)">
+    <img src="/assets/images/red-agent.png" alt="" *ngIf="playerType !== playerTypeEnum.SUPER_SPY">
   </div>
-  <div class="blue faces" *ngIf="card.type == typesEnum.BLUE_CARD && card.isExposed">
-    <img src="/assets/images/blue-agent.png" alt="">
+  <div class="blue faces" *ngIf="card.type == cardTypeEnum.BLUE_CARD && (card.isExposed || playerType === playerTypeEnum.SUPER_SPY)">
+    <img src="/assets/images/blue-agent.png" alt="" *ngIf="playerType !== playerTypeEnum.SUPER_SPY">
   </div>
-  <div class="black faces" *ngIf="card.type == typesEnum.BLACK_CARD && card.isExposed">
-    <img src="/assets/images/spyware.svg" alt="">
+  <div class="black faces" *ngIf="card.type == cardTypeEnum.BLACK_CARD && (card.isExposed || playerType === playerTypeEnum.SUPER_SPY)">
+    <img src="/assets/images/spyware.svg" alt="" *ngIf="playerType !== playerTypeEnum.SUPER_SPY">
   </div>
-  <div class="grey faces" *ngIf="card.type == typesEnum.GREY_CARD && card.isExposed">
-    <img src="/assets/images/confused.svg" alt="">
+  <div class="grey faces" *ngIf="card.type == cardTypeEnum.GREY_CARD && (card.isExposed || playerType === playerTypeEnum.SUPER_SPY)">
+    <img src="/assets/images/confused.svg" alt="" *ngIf="playerType !== playerTypeEnum.SUPER_SPY">
   </div>
 </mat-card>

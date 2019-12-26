@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TypesEnum} from '../../entities/card';
+import {CardTypeEnum} from '../../entities/card';
 import {Board} from '../../entities/board';
+import {GroupEnum, Player, PlayerTypeEnum} from '../../entities/player';
 
 @Component({
   selector: 'app-board',
@@ -11,18 +12,27 @@ export class BoardComponent implements OnInit {
 
   selectedCard: string;
   board: Board;
-
+  player: Player;
+  playerTypeEnum = PlayerTypeEnum;
   constructor() {
     this.board = new Board();
     this.board.id = '1';
-    this.board.cards = [
-      {
-        id: '1',
-        type: TypesEnum.RED_CARD,
+    this.board.cards = [];
+
+    for (let i = 0; i < 25; i++) {
+      this.board.cards.push(      {
+        id: i.toString(),
+        type: CardTypeEnum.RED_CARD,
         isExposed: false,
-        word: 'ציון האפס'
-      }
-    ];
+        word: 'css ציון'
+      });
+    }
+    this.player = {
+      id: '1',
+      userId: '2',
+      type: PlayerTypeEnum.SUPER_SPY,
+      group: GroupEnum.BLUE
+    };
   }
 
   ngOnInit() {

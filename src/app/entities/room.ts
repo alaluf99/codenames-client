@@ -2,11 +2,11 @@ import {Player} from './player';
 import {Board} from './board';
 
 export class Room {
-  id: string;
+  id?: string;
   name: string;
-  players: Player[];
+  numberOfPlayers: number;
   status: RoomStatusEnum;
-  board: Board;
+  board?: Board;
 }
 
 export enum RoomStatusEnum {

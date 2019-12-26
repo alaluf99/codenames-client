@@ -1,11 +1,11 @@
 export class Card {
   id: string;
   word: string;
-  type: TypesEnum;
+  type: CardTypeEnum;
   isExposed: boolean;
 }
 
-export enum TypesEnum {
+export enum CardTypeEnum {
   GREY_CARD,
   BLUE_CARD,
   RED_CARD,

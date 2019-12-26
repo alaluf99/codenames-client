@@ -1,5 +1,21 @@
 <div>
-  <app-card *ngFor="let card of board.cards" (selectCard)="select($event)"
-            [selectedCard]="selectedCard" [card]="card"></app-card>
-  <button type="submit" class="btn btn-round btn-primary btn-block">expose!!</button>
+  <div class="cards">
+    <app-card *ngFor="let card of board.cards" (selectCard)="select($event)"
+              [selectedCard]="selectedCard" [card]="card" [playerType]="player.type"></app-card>
+  </div>
+  <div [ngSwitch]="player?.type">
+    <ng-template [ngSwitchCase]="playerTypeEnum.SUPER_SPY">
+      <div class="spy-board">
+        <input type="text">
+        <input type="number" min="1" max="9">
+        <button type="submit" class="btn btn-round btn-primary btn-block">submit</button>
+      </div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="playerTypeEnum.REGULAR">
+      <div class="empty-pack">empty</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="playerTypeEnum.TEAM_LEADER">
+      <button type="submit" class="btn btn-round btn-primary btn-block">expose!!</button>
+    </ng-template>
+  </div>
 </div>

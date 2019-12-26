@@ -1,7 +1,7 @@
 export class Player {
   id: string;
   userId: string;
-  type: TypeEnum;
+  type: PlayerTypeEnum;
   group: GroupEnum;
 }
 
@@ -10,8 +10,8 @@ export enum GroupEnum {
   RED
 }
 
-export enum TypeEnum {
-  GROUP_MANAGER,
+export enum PlayerTypeEnum {
+  TEAM_LEADER,
   REGULAR,
-  SPY
+  SUPER_SPY
 }

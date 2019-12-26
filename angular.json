@@ -29,13 +29,13 @@
             ],
             "styles": [
               "src/styles.less",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               {
                 "input": "src/assets/css/zkin-ui-kit.min.css"
               },
               {
                 "input": "src/assets/fontawesome/css/all.min.css"
-              }
+              },
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": [
               "src/assets/js/zkin-ui-kit.js",

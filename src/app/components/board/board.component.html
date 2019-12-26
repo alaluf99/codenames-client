@@ -1,4 +1,4 @@
-<div>
+<div class="page" [ngClass]="{'red-group': player.group === group.RED, 'blue-group': player.group === group.BLUE}">
   <div class="cards">
     <app-card *ngFor="let card of board.cards" (selectCard)="select($event)"
               [selectedCard]="selectedCard" [card]="card" [playerType]="player.type"></app-card>
@@ -6,16 +6,29 @@
   <div [ngSwitch]="player?.type">
     <ng-template [ngSwitchCase]="playerTypeEnum.SUPER_SPY">
       <div class="spy-board">
-        <input type="text">
-        <input type="number" min="1" max="9">
-        <button type="submit" class="btn btn-round btn-primary btn-block">submit</button>
+        <div>
+          <input id="word" type="text" [(ngModel)]="word">
+          <label for="word">:הכנס מילה</label>
+        </div>
+        <div>
+          <input id="number" type="number" min="1" max="9" [(ngModel)]="numOfCards">
+          <label for="number">:הכנס מספר מילים</label>
+        </div>
+        <button type="submit" class="btn btn-round btn-primary btn-block submit">submit</button>
       </div>
     </ng-template>
     <ng-template [ngSwitchCase]="playerTypeEnum.REGULAR">
-      <div class="empty-pack">empty</div>
+      <div class="group-board">
+        <label class="spy-word">{{word}}</label>
+        <label class="spy-num-of-cards">{{numOfCards}}</label>
+      </div>
     </ng-template>
     <ng-template [ngSwitchCase]="playerTypeEnum.TEAM_LEADER">
-      <button type="submit" class="btn btn-round btn-primary btn-block">expose!!</button>
+      <div class="group-board">
+        <label class="spy-word">{{word}}</label>
+        <label class="spy-num-of-cards">{{numOfCards}}</label>
+        <button type="submit" class="btn btn-round btn-primary btn-block expose" (click)="expose()">expose!!</button>
+      </div>
     </ng-template>
   </div>
 </div>

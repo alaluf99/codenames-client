@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
   }
 
   select() {
-    if (!this.card.isExposed && this.playerType !== this.playerTypeEnum.SUPER_SPY) {
+    if (!this.card.isExposed && this.playerType === this.playerTypeEnum.TEAM_LEADER) {
       this.selectCard.emit(this.card.id);
     }
   }

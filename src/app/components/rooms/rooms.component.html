@@ -18,10 +18,10 @@
     <!--<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>-->
   </table>
 
-  <div style="text-align: center; margin-top: 19px;">
-    <mat-form-field class="example-full-width" lass="add-room-input">
-      <textarea matInput placeholder="enter room name"></textarea>
-    </mat-form-field>
-    <button mat-button class="btn btn-primary add-room" (click)="addRoom()">add room</button>
-  </div>
+    <div class="add-room-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="enter room name">
+      </mat-form-field>
+      <button mat-button class="btn btn-primary add-room" (click)="addRoom()">add room</button>
+    </div>
 </div>

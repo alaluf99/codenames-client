@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { BoardComponent } from './components/board/board.component';
 import {HttpClientModule} from "@angular/common/http";
+import { WaitingComponent } from './components/waiting/waiting.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginComponent,
     RoomsComponent,
     CardComponent,
-    BoardComponent
+    BoardComponent,
+    WaitingComponent
   ],
   imports: [
     BrowserModule,

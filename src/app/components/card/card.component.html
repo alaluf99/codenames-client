@@ -1,0 +1,18 @@
+<mat-card id="{{ card.id }}" (click)="select()" [ngClass]="{'selected': selectedCard === card.id}">
+  <div class="word" [ngClass]="{'exposed': card.isExposed}">
+    {{card.word}}
+  </div>
+<!--  <div class="red faces">-->
+  <div class="red faces" *ngIf="card.type == typesEnum.RED_CARD && card.isExposed">
+    <img src="/assets/images/red-agent.png" alt="">
+  </div>
+  <div class="blue faces" *ngIf="card.type == typesEnum.BLUE_CARD && card.isExposed">
+    <img src="/assets/images/blue-agent.png" alt="">
+  </div>
+  <div class="black faces" *ngIf="card.type == typesEnum.BLACK_CARD && card.isExposed">
+    <img src="/assets/images/spyware.svg" alt="">
+  </div>
+  <div class="grey faces" *ngIf="card.type == typesEnum.GREY_CARD && card.isExposed">
+    <img src="/assets/images/confused.svg" alt="">
+  </div>
+</mat-card>

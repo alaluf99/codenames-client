@@ -1,0 +1,5 @@
+<div>
+  <app-card *ngFor="let card of board.cards" (selectCard)="select($event)"
+            [selectedCard]="selectedCard" [card]="card"></app-card>
+  <button type="submit" class="btn btn-round btn-primary btn-block">expose!!</button>
+</div>

@@ -16,5 +16,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.router.navigateByUrl('/rooms');
   }
+
+  doubleClick() {
+    this.router.navigateByUrl('/board');
+  }
 }
 

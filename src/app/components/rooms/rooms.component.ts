@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Room, RoomStatusEnum} from "../../entities/room";
+import {Room, RoomStatusEnum} from '../../entities/room';
+import {DataService} from "../../services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-rooms',
@@ -19,46 +21,48 @@ export class RoomsComponent implements OnInit {
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     },
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     },
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     },
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     },
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     },
     {
       name: 'חדר מלך',
       numberOfPlayers: 4,
-      status: RoomStatusEnum.STARTED
+      status: RoomStatusEnum.ACTIVE
     }
-  ]
+  ];
 
-  constructor() { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.dataSource = this.ELEMENT_DATA;
   }
 
   enterRoom() {
-
+    this.router.navigateByUrl('/board');
   }
 
   addRoom() {
-    console.log('hi');
+    this.dataService.addRoom().subscribe((res) => {
+      console.log(res);
+    });
   }
 }

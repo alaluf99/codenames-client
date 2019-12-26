@@ -11,6 +11,6 @@ export class DataService {
   constructor(private httpClient: HttpClient) {}
 
   addRoom() {
-    this.httpClient.post('/rooms', {name: 'חדר מלך', status: RoomStatusEnum.WAITING, cards: [], users: []});
+    return this.httpClient.post(this.SERVER_URL + '/rooms', {name: 'חדר מלך', status: RoomStatusEnum.ACTIVE, cards: [], users: []});
   }
 }

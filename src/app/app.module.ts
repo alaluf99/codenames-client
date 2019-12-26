@@ -10,6 +10,7 @@ import { AngularMaterialModule } from './material/angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { BoardComponent } from './components/board/board.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BoardComponent } from './components/board/board.component';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class RoomsComponent implements OnInit {
   columnsToDisplay = ['name', 'numberOfPlayers', 'status'];
+  roomName: string;
   dataSource;
   rooms: Room[];
   columnsInHebrew = {
@@ -22,8 +23,13 @@ export class RoomsComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
+    this.getRooms();
+  }
+
+  getRooms() {
     this.dataService.getRooms().subscribe((res) => {
       this.rooms = res as Room[];
+      this.roomsArray = [];
       this.rooms.forEach((room) => {
         this.roomsArray.push({
           name: room.name,
@@ -40,8 +46,9 @@ export class RoomsComponent implements OnInit {
   }
 
   addRoom() {
-    this.dataService.addRoom().subscribe((res) => {
-      console.log(res);
+    this.dataService.addRoom(this.roomName).subscribe(() => {
+      this.getRooms();
+      this.roomName = '';
     });
   }
 }

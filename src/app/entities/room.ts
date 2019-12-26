@@ -10,7 +10,7 @@ export class Room {
 }
 
 export enum RoomStatusEnum {
-  WAITING = 'waiting',
-  INITIALIZING = 'initialize',
-  ACTIVE = 'active'
+  WAITING = 'WAITING',
+  INITIALIZING = 'INITIALIZING',
+  ACTIVE = 'ACTIVE'
 }

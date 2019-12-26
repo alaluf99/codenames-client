@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from "../../services/game.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-waiting',
@@ -7,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WaitingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService: GameService, private router: Router) { }
 
   ngOnInit() {
   }
 
   enterToGame() {
-
+    this.gameService.initGame().subscribe((res) => {
+      console.log(res);
+      this.router.navigateByUrl('/board');
+    });
   }
 
 }

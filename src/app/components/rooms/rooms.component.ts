@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Room, RoomStatusEnum} from '../../entities/room';
 import {DataService} from '../../services/data.service';
 import {Router} from '@angular/router';
+import {GameService} from "../../services/game.service";
 
 @Component({
   selector: 'app-rooms',
@@ -20,7 +21,7 @@ export class RoomsComponent implements OnInit {
   };
   roomsArray = [];
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
     this.getRooms();
@@ -43,9 +44,9 @@ export class RoomsComponent implements OnInit {
   }
 
   enterRoom(roomId: string) {
-    this.dataService.addUserToRoom(roomId).subscribe((res) => {
-      console.log(res);
-      this.router.navigateByUrl('/board');
+    this.dataService.addUserToRoom(roomId).subscribe((res: any) => {
+      this.gameService.currentRoomId = res._id as string;
+      this.router.navigateByUrl('/waiting');
     });
   }
 

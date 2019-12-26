@@ -1,5 +1,5 @@
 import {Player} from './player';
-import {Board} from "./board";
+import {Board} from './board';
 
 export class Room {
   id?: string;

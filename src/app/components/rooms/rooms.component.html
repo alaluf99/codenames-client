@@ -3,11 +3,11 @@
     חיפוש חדרים
   </div>
   <table dir="rtl" mat-table style="text-align: right"
-        [dataSource]="dataSource" multiTemplateDataRows
-        class="mat-elevation-z8">
+         [dataSource]="dataSource" multiTemplateDataRows
+         class="mat-elevation-z8">
     <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-      <th mat-header-cell *matHeaderCellDef> {{columnsInHebrew[column]}} </th>
-      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      <th mat-header-cell *matHeaderCellDef> {{columnsInHebrew[column]}}</th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}}</td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
@@ -17,11 +17,15 @@
     </tr>
     <!--<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>-->
   </table>
-
-    <div class="add-room-group">
-      <mat-form-field class="example-full-width">
-        <input  [(ngModel)]="roomName" matInput placeholder="enter room name">
-      </mat-form-field>
-      <button [disabled]="!roomName" mat-raised-button color="primary" class="btn btn-primary add-room" (click)="addRoom()">add room</button>
-    </div>
+  <div class="rooms-header">
+     הוספת חדר
+  </div>
+  <div class="add-room-group">
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="roomName" matInput placeholder="enter room name">
+    </mat-form-field>
+    <button [disabled]="!roomName" mat-raised-button color="primary" class="btn btn-primary add-room"
+            (click)="addRoom()">add room
+    </button>
+  </div>
 </div>

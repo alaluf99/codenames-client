@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Card, CardTypeEnum} from '../../entities/card';
-import {PlayerTypeEnum} from '../../entities/player';
+import {GroupEnum, Player, PlayerTypeEnum} from '../../entities/player';
 
 @Component({
   selector: 'app-card',
@@ -9,12 +9,13 @@ import {PlayerTypeEnum} from '../../entities/player';
 })
 export class CardComponent implements OnInit {
 
+  group = GroupEnum;
   playerTypeEnum = PlayerTypeEnum;
   cardTypeEnum = CardTypeEnum;
   @Output() selectCard = new EventEmitter();
   @Input() selectedCard: string;
   @Input() card: Card;
-  @Input() playerType: PlayerTypeEnum;
+  @Input() player: Player;
 
   constructor() {
   }
@@ -23,7 +24,7 @@ export class CardComponent implements OnInit {
   }
 
   select() {
-    if (!this.card.isExposed && this.playerType === this.playerTypeEnum.TEAM_LEADER) {
+    if (!this.card.isExposed && this.player.type === this.playerTypeEnum.TEAM_LEADER) {
       this.selectCard.emit(this.card.id);
     }
   }

@@ -37,7 +37,7 @@ export class BoardComponent implements OnInit {
       id: '1',
       userId: '2',
       type: PlayerTypeEnum.TEAM_LEADER,
-      group: GroupEnum.BLUE
+      group: GroupEnum.RED
     };
   }
 

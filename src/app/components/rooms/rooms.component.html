@@ -13,7 +13,7 @@
     <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
         class="example-element-row"
         [class.example-expanded-row]="expandedElement === element"
-        (click)="enterRoom()">
+        (click)="enterRoom(element.id)">
     </tr>
     <!--<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>-->
   </table>

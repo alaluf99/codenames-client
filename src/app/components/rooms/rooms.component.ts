@@ -32,8 +32,9 @@ export class RoomsComponent implements OnInit {
       this.roomsArray = [];
       this.rooms.forEach((room) => {
         this.roomsArray.push({
+          id: room.id,
           name: room.name,
-          numberOfPlayers: 2,
+          numberOfPlayers: 1,
           status: room.status
         });
       });
@@ -41,8 +42,11 @@ export class RoomsComponent implements OnInit {
     });
   }
 
-  enterRoom() {
-    this.router.navigateByUrl('/board');
+  enterRoom(roomId: string) {
+    this.dataService.addUserToRoom(roomId).subscribe((res) => {
+      console.log(res);
+      this.router.navigateByUrl('/board');
+    });
   }
 
   addRoom() {

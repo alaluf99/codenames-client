@@ -4,7 +4,7 @@ import {Board} from './board';
 export class Room {
   id?: string;
   name: string;
-  numberOfPlayers: number;
+  user: Player;
   status: RoomStatusEnum;
   board?: Board;
 }

@@ -1,9 +1,9 @@
-<div class="page" [ngClass]="{'red-group': player.group === group.RED, 'blue-group': player.group === group.BLUE}">
+<div class="page" [ngClass]="{'red-team': player.team === group.RED, 'blue-ream': player.team === group.BLUE}">
   <div class="cards">
     <app-card *ngFor="let card of board.cards" (selectCard)="select($event)"
               [selectedCard]="selectedCard" [card]="card" [player]="player"></app-card>
   </div>
-  <div [ngSwitch]="player?.type">
+  <div [ngSwitch]="player?.userType">
     <ng-template [ngSwitchCase]="playerTypeEnum.SUPER_SPY">
       <div class="spy-board">
         <div>

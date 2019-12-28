@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CardTypeEnum} from '../../entities/card';
 import {Board} from '../../entities/board';
-import {GroupEnum, Player, PlayerTypeEnum} from '../../entities/player';
+import {TeamEnum, Player, PlayerTypeEnum} from '../../entities/player';
+import {GameService} from '../../services/game.service';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-board',
@@ -12,7 +14,8 @@ export class BoardComponent implements OnInit {
 
   selectedCard: string;
   board: Board;
-  group = GroupEnum;
+  group = TeamEnum;
+  users: Player[];
   player: Player;
   playerTypeEnum = PlayerTypeEnum;
   // numOfCards: number;
@@ -20,10 +23,12 @@ export class BoardComponent implements OnInit {
   // word: string;
   word = 'sharon';
 
-  constructor() {
+  constructor(private gameService: GameService, private authenticationService: AuthenticationService) {
     this.board = new Board();
     this.board.id = '1';
     this.board.cards = [];
+    // after getting cards from DB
+    // this.board.cards = this.gameService.cards;
 
     for (let i = 0; i < 25; i++) {
       this.board.cards.push({
@@ -33,12 +38,8 @@ export class BoardComponent implements OnInit {
         word: 'css ציון'
       });
     }
-    this.player = {
-      id: '1',
-      userId: '2',
-      type: PlayerTypeEnum.TEAM_LEADER,
-      group: GroupEnum.RED
-    };
+    this.users = this.gameService.users;
+    this.player = this.users.find(user => user.user_id === authenticationService.currentUserId);
   }
 
   ngOnInit() {

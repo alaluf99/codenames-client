@@ -1,17 +1,18 @@
 export class Player {
   id: string;
-  userId: string;
-  type: PlayerTypeEnum;
-  group: GroupEnum;
+  // tslint:disable-next-line:variable-name
+  user_id: string;
+  userType: PlayerTypeEnum;
+  team: TeamEnum;
 }
 
-export enum GroupEnum {
-  BLUE,
-  RED
+export enum TeamEnum {
+  BLUE = 'BLUE',
+  RED = 'RED'
 }
 
 export enum PlayerTypeEnum {
-  TEAM_LEADER,
-  REGULAR,
-  SUPER_SPY
+  TEAM_LEADER = 'TEAM_LEADER',
+  REGULAR = 'REGULAR',
+  SUPER_SPY = 'SUPER_SPY'
 }

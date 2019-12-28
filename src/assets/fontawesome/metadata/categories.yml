@@ -779,12 +779,12 @@ design:
     - fill
     - fill-drip
     - highlighter
-    - layer-group
+    - layer-team
     - layer-minus
     - layer-plus
     - magic
     - marker
-    - object-group
+    - object-team
     - object-ungroup
     - paint-brush
     - paint-brush-alt
@@ -1499,7 +1499,7 @@ maps:
     - info-square
     - key
     - landmark
-    - layer-group
+    - layer-team
     - layer-minus
     - layer-plus
     - leaf

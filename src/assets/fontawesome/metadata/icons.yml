@@ -1859,7 +1859,7 @@ ball-pile:
   label: Ball Pile
   search:
     terms:
-      - group
+      - team
       - seasonal
       - snowballs
   styles:
@@ -14178,7 +14178,7 @@ keyboard:
   search:
     terms:
       - input
-      - type
+      - userType
   styles:
     - solid
     - regular

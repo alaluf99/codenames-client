@@ -4,13 +4,12 @@ import {Board} from './board';
 export class Room {
   id?: string;
   name: string;
-  user: Player;
+  users: Player[];
   status: RoomStatusEnum;
   board?: Board;
 }
 
 export enum RoomStatusEnum {
   WAITING = 'WAITING',
-  INITIALIZING = 'INITIALIZING',
   ACTIVE = 'ACTIVE'
 }

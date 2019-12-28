@@ -713,7 +713,7 @@ via:
     - draw-polygon
     - draw-square
     - house-damage
-    - layer-group
+    - layer-team
     - layer-minus
     - layer-plus
     - skull-crossbones
